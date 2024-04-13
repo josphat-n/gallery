@@ -19,9 +19,9 @@ pipeline {
         sh 'npm test'
       }
     }
-    stage('Run Code') {
+    stage('Slack Notification') {
       steps {
-        sh 'npm start'
+        slackSend color: 'good', message: 'success'
       }
     }
   }
