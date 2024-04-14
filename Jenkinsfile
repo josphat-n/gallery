@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Slack Notification') {
       steps {
-        slackSend color: 'good', message: 'success'
+        slackSend color: 'good', message: "${env.JOB_NAME} ${env.BUILD_NUMBER} built successfully."
       }
     }
   }
