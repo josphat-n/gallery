@@ -18,10 +18,10 @@ pipeline {
       steps {
         sh 'npm test'
       }
-    }
+    }    
     stage('Slack Notification') {
       steps {
-        slackSend color: 'good', message: "${env.JOB_NAME} ${env.BUILD_NUMBER} built successfully."
+        slackSend color: 'good', message: "Gallery application build #${env.BUILD_NUMBER} completed successfully. Visit the site at  jn-gallery.onrender.com"
       }
     }
   }
